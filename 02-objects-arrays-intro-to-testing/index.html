@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<script>
+
+  // Function-expression (FE)
+  // Function-declaration (FD)
+
+  function makeCounter () {
+    let count = 0;
+
+    return () => {
+      return count += 1;
+    }
+  }
+
+  const counter = makeCounter();
+
+  console.error(counter());
+  console.error(counter());
+  console.error(counter());
+  console.error(counter());
+
+</script>
