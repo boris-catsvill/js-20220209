@@ -32,7 +32,6 @@ export default class ColumnChart {
           <div data-element="body" class="column-chart__chart">
             ${this.getColumnBody()}
           </div>
-          <div data-element="js"></div>
         </div>
       </div>
     `;

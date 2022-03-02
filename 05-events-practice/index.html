@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<body>
+  <button id="btn">Click me maybe!</button>
+
+  <div id="root"></div>
+</body>
+
+<script>
+  class Component {
+    constructor() {
+      this.color = 'green';
+
+      this.initEventListeners();
+    }
+
+    handleClick = (event) => {
+      console.error(this.color);
+      // console.error(this.color, event);
+    }
+
+    initEventListeners () {
+      btn.addEventListener('click', this.handleClick);
+    }
+
+    destroy () {
+      console.error('destroy');
+      btn.removeEventListener('click', this.handleClick);
+    }
+  }
+
+  const obj = new Component();
+</script>
+
+<script type="module">
+  const arr = [13, 12, 15, 11, 9, 12, 16];
+
+
+  const foo = list => {
+    const result = [];
+
+    let current;
+
+    for (let i = 0; i < list.length; i++) {
+      if (i === list.length - 1) {
+        result.push(0);
+        break;
+      }
+
+      current = list[i];
+
+      for (let j = i + 1; j < list.length; j++) {
+        const next = list[j];
+
+        if (next > current) {
+          result.push(j - i);
+          break;
+        }
+      }
+
+
+    }
+
+    return result;
+  };
+
+  console.error(foo(arr));
+
+  const getResult = list => {
+    const result = [];
+    const litCopy = [...list];
+
+    const doStep = () => {
+      if (litCopy.length === 1) {
+        result.push(0);
+        return result;
+      }
+
+      const current = litCopy.shift();
+
+      if (current === undefined) return result;
+
+      for (const [index, item] of litCopy.entries()) {
+
+        if (item > current) {
+          result.push(index + 1);
+          break
+        }
+      }
+
+      return doStep();
+    };
+
+    return doStep(list)
+  };
+
+  const result = getResult(arr);
+
+  console.error(result);
+
+  const bar = arr => {
+    const arrCopy = [...arr].reverse();
+    const result = [];
+    const stack = [];
+
+    for (const [index, item] of arrCopy.entries()) {
+      const [top] = stack;
+
+      if (item < top) {
+        stack.push([item, arrCopy.length - index]);
+      } else {
+        result.push([item, arrCopy.length - index]);
+      }
+    }
+
+    return result;
+  };
+
+  console.error(bar(arr));
+</script>
