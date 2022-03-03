@@ -1,8 +1,7 @@
 import Tooltip from '../solution/index.js';
-import tooltip from '../solution';
 
 describe('events-practice/tooltip', () => {
-  // const tooltip = new Tooltip();
+  const tooltip = new Tooltip();
 
   beforeEach(() => {
     const container = document.createElement('div');
