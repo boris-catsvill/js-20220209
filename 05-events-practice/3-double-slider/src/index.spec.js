@@ -1,4 +1,4 @@
-import DoubleSlider from '../solution';
+import DoubleSlider from '../solution/index.js';
 
 describe('events-practice/double-slider', () => {
   let doubleSlider;
