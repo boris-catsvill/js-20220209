@@ -118,8 +118,6 @@ describe('dom-document-loading/sortable-table-v1', () => {
     const firstRow = body.firstElementChild;
     const lastRow = body.lastElementChild;
 
-    console.log('body', body);
-
     expect(firstRow.children[cellIndex].textContent).toEqual('3');
     expect(lastRow.children[cellIndex].textContent).toEqual('53');
   });

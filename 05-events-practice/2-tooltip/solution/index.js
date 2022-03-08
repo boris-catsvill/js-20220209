@@ -1,5 +1,5 @@
 class Tooltip {
-  static instance; // undefined
+  static instance;
 
   element;
 

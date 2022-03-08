@@ -4,7 +4,7 @@ class Tooltip {
 
   constructor() {
     if (Tooltip._instance) {
-      return Tooltip._instance
+      return Tooltip._instance;
     }
     Tooltip._instance = this;
 
@@ -23,11 +23,11 @@ class Tooltip {
       this.element.textContent = `${text ?? this.tooltipText}`;
   }
 
-  onPointerOver = (event) => {
+  onPointerOver = event => {
     const tooltip = event.target.dataset.tooltip;
     if (tooltip) {
       this.render(tooltip);
-      this.initialize()
+      this.initialize();
       this.element.style.left = `${Math.round(event.clientX + 50)}px`;
       this.element.style.top = `${Math.round(event.clientY + 10)}px`;
     }

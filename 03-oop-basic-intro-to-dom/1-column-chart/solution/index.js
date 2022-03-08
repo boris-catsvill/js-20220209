@@ -61,8 +61,6 @@ export default class ColumnChart {
       result[name] = subElement;
     }
 
-    console.error('result', result);
-
     return result;
   }
 
