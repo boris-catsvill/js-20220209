@@ -3,22 +3,22 @@
 
 <body>
   <button id="btn">Click me!</button>
-</body>
 
-<script type="module">
-  btn.addEventListener('click', () => {
-    const myEvent = new CustomEvent('range-select', {
-      detail: {
-        from: 100,
-        to: 200
-      },
-      bubbles: true
+  <script type="module">
+    btn.addEventListener('click', () => {
+      const myEvent = new CustomEvent('range-select', {
+        detail: {
+          from: 100,
+          to: 200
+        },
+        bubbles: true
+      });
+
+      btn.dispatchEvent(myEvent);
     });
 
-    btn.dispatchEvent(myEvent);
-  });
-
-  document.addEventListener('range-select', event => {
-    console.error(event);
-  });
-</script>
+    document.addEventListener('range-select', event => {
+      console.error(event);
+    });
+  </script>
+</body>

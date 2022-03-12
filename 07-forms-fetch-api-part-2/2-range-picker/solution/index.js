@@ -7,7 +7,6 @@ export default class RangePicker {
     to: new Date()
   };
 
-  asd
   static formatDate(date) {
     return date.toLocaleString('ru', {dateStyle: 'short'});
   }
